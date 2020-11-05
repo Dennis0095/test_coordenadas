@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         ServiceGuardar service = new ServiceGuardar();
         serviceIntent = new Intent(this, service.getClass());
-        if (!isMyServiceRunning(service.getClass())) {
+        if (!verificarServicio(service.getClass())) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 startForegroundService(serviceIntent);
             } else {
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     }
 
-    private boolean isMyServiceRunning(Class<?> serviceClass) {
+    private boolean verificarServicio(Class<?> serviceClass) {
         ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
         for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
             if (serviceClass.getName().equals(service.service.getClassName())) {
