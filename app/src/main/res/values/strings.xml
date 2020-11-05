@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">hacom_test</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="login">INICIAR</string>
+    <string name="user">USER</string>
+    <string name="pwd">PASSWORD</string>
+    <string name="verificarCampos">Por favor, completar campos requeridos.</string>
+    <string name="activarG">Por favor, activar su GPS.</string>
+</resources>
